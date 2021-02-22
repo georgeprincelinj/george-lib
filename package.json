@@ -1,17 +1,21 @@
 {
-  "name": "george-lib",
+  "name": "george",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --report-json --formats umd --inline-vue --name george ./index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "browser": {
+    "vue": "node_modules/vue/dist/vue.esm.bundler.jsvue/dist/vue.common.js"
+  },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.13",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
